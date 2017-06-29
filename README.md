@@ -26,3 +26,4 @@ mPrinter.connectPrinter(new BluetoothPrinter.PrinterConnectListener() {
 });
 
 ```
+Thanks to [imrankst1221](https://github.com/imrankst1221/Thermal-Printer-in-Android)
