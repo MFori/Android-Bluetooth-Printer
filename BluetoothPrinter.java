@@ -2,7 +2,6 @@ package cz.martinforejt.bluetooth_printer;
 
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
@@ -27,16 +26,13 @@ public class BluetoothPrinter {
     private static final byte[] ESC_ALIGN_CENTER = new byte[]{0x1b, 'a', 0x01};
     private static final byte[] ESC_ALIGN_RIGHT = new byte[]{0x1b, 'a', 0x02};
     private static final byte[] ESC_ALIGN_LEFT = new byte[]{0x1b, 'a', 0x00};
-    private static final byte[] FEED_PAPER = {0x1D, 0x56, 66, 0x00};
 
-    private Context context;
     private BluetoothDevice printer;
     private BluetoothSocket btSocket = null;
     private OutputStream btOutputStream = null;
 
-    public BluetoothPrinter(BluetoothDevice printer, Context context) {
+    public BluetoothPrinter(BluetoothDevice printer) {
         this.printer = printer;
-        this.context = context;
     }
 
     public void connectPrinter(final PrinterConnectListener listener) {
