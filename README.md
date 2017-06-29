@@ -11,12 +11,16 @@ mPrinter.connectPrinter(new BluetoothPrinter.PrinterConnectListener() {
   
   @Override
   public void onConnected() {
+    mPrinter.setAlign(BluetoothPrinter.ALIGN_CENTER);
+    mPrinter.printText("Hello World!");
+    mPrinter.addNewLine();
     
+    mPrinter.finish();
   }
   
   @Overide
   public void onFailed() {
-  
+    Log.d("BluetoothPrinter", "Conection failed");
   }
   
 });
