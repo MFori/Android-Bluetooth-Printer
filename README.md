@@ -1,1 +1,1 @@
-# Android-Bluetooth-Printer
+# Android Bluetooth Printer
